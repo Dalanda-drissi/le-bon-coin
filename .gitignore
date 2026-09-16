@@ -36,3 +36,6 @@ yarn-error.log*
 
 # SWC
 .swc
+
+# typescript incremental build info
+*.tsbuildinfo

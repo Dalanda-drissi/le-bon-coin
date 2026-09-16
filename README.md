@@ -1,3 +1,9 @@
+> **Submission note** — my write-up (architecture, decisions, trade-offs, and four places where
+> the running API disagrees with the swagger) is in **[SOLUTION.md](./SOLUTION.md)**.
+> Quick start: `npm install`, then `npm run start-server` and `npm run dev`.
+
+---
+
 # Context :
 
 At leboncoin, our users can share messages about a transaction, or ask for informations about any products.

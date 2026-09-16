@@ -1,0 +1,56 @@
+.toggle {
+  flex-shrink: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: var(--radius-pill);
+}
+
+.toggle:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.track {
+  position: relative;
+  display: block;
+  width: 52px;
+  height: 30px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  background: var(--surface-2);
+  transition: background-color var(--dur-mid) var(--ease-out),
+    border-color var(--dur-mid) var(--ease-out);
+}
+
+.toggle:hover .track {
+  border-color: var(--brand);
+}
+
+.thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  display: flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  color: var(--brand-ink);
+
+  transition: transform var(--dur-mid) var(--ease-spring);
+}
+
+:global([data-theme='dark']) .thumb {
+  transform: translateX(22px);
+}
+
+@media (prefers-color-scheme: dark) {
+  :global(:root:not([data-theme='light'])) .thumb {
+    transform: translateX(22px);
+  }
+}

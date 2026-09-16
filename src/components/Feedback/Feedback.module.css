@@ -1,0 +1,193 @@
+.container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  min-height: 180px;
+  padding: var(--space-7) var(--space-5);
+  text-align: center;
+  animation: fade-in var(--dur-mid) var(--ease-out) both;
+}
+
+.title {
+  max-width: 34ch;
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+}
+
+.description {
+  max-width: 38ch;
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.muted {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.errorGlyph {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-lg);
+  background: var(--danger-tint);
+  color: var(--danger);
+}
+
+.spinner {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--border-strong);
+  border-top-color: var(--brand);
+  border-radius: 50%;
+  animation: spin 700ms linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.retry {
+  padding: var(--space-2) var(--space-5);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-spring);
+}
+
+.retry:hover:not(:disabled) {
+  border-color: var(--brand);
+  color: var(--brand-ink);
+  transform: translateY(-1px);
+}
+
+.retry:disabled {
+  cursor: progress;
+  opacity: 0.6;
+}
+
+.shimmer {
+  display: block;
+  border-radius: var(--radius-sm);
+  background-color: var(--surface-2);
+  background-image: linear-gradient(
+    90deg,
+    var(--surface-2) 0%,
+    var(--surface-3) 40%,
+    var(--surface-2) 80%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+}
+
+.skeletonList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-3);
+}
+
+.skeletonRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  animation: fade-in var(--dur-mid) var(--ease-out) both;
+}
+
+.skeletonAvatar {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  border-radius: 34%;
+}
+
+.skeletonText {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.skeletonLineWide {
+  width: 58%;
+  height: 11px;
+}
+
+.skeletonLineNarrow {
+  width: 34%;
+  height: 9px;
+}
+
+.skeletonThread {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-3);
+  justify-content: flex-end;
+  padding: var(--space-5);
+}
+
+.skeletonBubble {
+  height: 42px;
+  border-radius: var(--radius-lg);
+  align-self: flex-start;
+  border-bottom-left-radius: var(--radius-sm);
+}
+
+.skeletonBubbleOwn {
+  align-self: flex-end;
+  border-bottom-left-radius: var(--radius-lg);
+  border-bottom-right-radius: var(--radius-sm);
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-4);
+  border-bottom: 1px solid var(--danger-border);
+  background: var(--danger-tint);
+  animation: fade-in var(--dur-fast) var(--ease-out) both;
+}
+
+.bannerText {
+  flex: 1;
+  color: var(--danger);
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  text-align: left;
+}
+
+.bannerRetry {
+  flex-shrink: 0;
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid currentColor;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--danger);
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.bannerRetry:disabled {
+  cursor: progress;
+  opacity: 0.6;
+}

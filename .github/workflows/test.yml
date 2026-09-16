@@ -1,16 +1,32 @@
-name: Check tests with Jest
+name: CI
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
-  build:
-
+  verify:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version-file: '.nvmrc'
-    - run: npm ci
-    - run: npm test
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+
+      - run: npm ci
+
+      - name: Lint
+        if: '!cancelled()'
+        run: npm run lint
+
+      - name: Typecheck
+        if: '!cancelled()'
+        run: npm run typecheck
+
+      - name: Unit and integration tests
+        if: '!cancelled()'
+        run: npm test -- --coverage
+
+      - name: Production build
+        if: '!cancelled()'
+        run: npm run build

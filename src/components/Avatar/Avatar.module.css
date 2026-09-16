@@ -1,0 +1,26 @@
+.avatar {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 34%;
+  color: #ffffff;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  user-select: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.avatar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0) 55%);
+  pointer-events: none;
+}
