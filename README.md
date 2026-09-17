@@ -3,8 +3,6 @@
 A messaging interface built on the provided Next.js scaffold: a list of conversations, a thread per
 conversation, and sending — on desktop and mobile.
 
-The original exercise statement is preserved at the [bottom of this file](#the-original-brief).
-
 ---
 
 ## Running it
